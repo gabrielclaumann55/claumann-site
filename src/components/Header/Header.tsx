@@ -8,14 +8,14 @@ function Header() {
   return (
     <header className="absolute top-0 left-0 z-50 w-full">
 
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-4 lg:px-8">
 
         {/* Logo */}
         <a href="#" className="flex items-center">
           <img
             src={logo}
             alt="Claumann Sistemas Integrados"
-            className="h-16 w-auto object-contain lg:h-28"
+            className="h-12 w-auto object-contain lg:h-28"
           />
         </a>
 
@@ -82,8 +82,7 @@ function Header() {
   href="http://claumann.base44.app/"
   target="_blank"
   rel="noopener noreferrer"
-  className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-500 lg:px-6 lg:py-3 lg:text-base"
->
+  className="ml-auto rounded-xl bg-blue-600 px-3 py-2 text-xs font-semibold text-white transition hover:bg-blue-500 sm:px-4 sm:text-sm lg:px-6 lg:py-3 lg:text-base"
   Acessar Sistema
 </a>
 
