@@ -8,7 +8,7 @@ function Header() {
   return (
     <header className="absolute top-0 left-0 z-50 w-full">
 
-      <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-4 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
 
         {/* Logo */}
         <a href="#" className="flex items-center">
@@ -19,7 +19,7 @@ function Header() {
           />
         </a>
 
-        {/* Desktop */}
+        {/* Botão Desktop */}
         <div className="hidden lg:block">
           <a
             href="http://claumann.base44.app/"
@@ -27,19 +27,20 @@ function Header() {
             rel="noopener noreferrer"
             className="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-500"
           >
-            Acessar Sistema
+            Acessar Plataforma
           </a>
         </div>
 
-        {/* Botão Mobile */}
+        {/* Botão Menu Mobile */}
         <button
-          className="lg:hidden"
+          className="text-white lg:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
 
       </div>
+
 
       {/* Menu Mobile */}
       {menuOpen && (
@@ -78,21 +79,15 @@ function Header() {
             >
               Contato
             </a>
-<a
-  href="http://claumann.base44.app/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="ml-auto rounded-xl bg-blue-600 px-3 py-2 text-xs font-semibold text-white transition hover:bg-blue-500 sm:px-4 sm:text-sm lg:px-6 lg:py-3 lg:text-base"
-  Acessar Sistema
-</a>
 
-{/* Menu Mobile */}
-<button
-  className="lg:hidden"
-  onClick={() => setMenuOpen(!menuOpen)}
->
-  {menuOpen ? <X size={30} /> : <Menu size={30} />}
-</button>
+            <a
+              href="http://claumann.base44.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl bg-blue-600 px-5 py-3 text-center font-semibold text-white transition hover:bg-blue-500"
+            >
+              Acessar Plataforma
+            </a>
 
           </nav>
 
