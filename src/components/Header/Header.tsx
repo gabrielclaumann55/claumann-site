@@ -78,15 +78,22 @@ function Header() {
             >
               Contato
             </a>
+<a
+  href="http://claumann.base44.app/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-500 lg:px-6 lg:py-3 lg:text-base"
+>
+  Acessar Sistema
+</a>
 
-            <a
-              href="http://claumann.base44.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 rounded-xl bg-blue-600 py-4 text-center font-semibold text-white transition hover:bg-blue-500"
-            >
-              Acessar Sistema
-            </a>
+{/* Menu Mobile */}
+<button
+  className="lg:hidden"
+  onClick={() => setMenuOpen(!menuOpen)}
+>
+  {menuOpen ? <X size={30} /> : <Menu size={30} />}
+</button>
 
           </nav>
 
