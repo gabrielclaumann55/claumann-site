@@ -11,7 +11,7 @@ import Footer from "./components/Footer/Footer";
 import Stats from "./components/Stats/Stats";
 import Results from "./components/Results/Results";
 import WhatsAppButton from "./components/WhatsAppButton";
-import DashboardPreview from "./components/sections/DashboardPreview";
+
 
 
 function App() {
@@ -20,7 +20,6 @@ function App() {
 <>
   <Header />
   <Hero />
- <DashboardPreview />
   <Modules />
   <Features />
     <Indicators />

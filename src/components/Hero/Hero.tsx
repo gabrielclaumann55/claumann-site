@@ -1,95 +1,167 @@
 import { ArrowRight, CheckCircle } from "lucide-react";
-import dashboard from "../../assets/images/dashboard.png";
+import videoDemo from "../../assets/videos/apresentacao.mp4";
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-slate-950 text-white">
-      {/* Glow */}
-      <div className="absolute top-0 right-0 h-[280px] w-[280px] rounded-full bg-blue-600/20 blur-3xl lg:h-[500px] lg:w-[500px]" />
+    <section className="relative overflow-hidden bg-slate-950 pt-24 text-white">
 
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:gap-20 lg:px-8 lg:py-28">
+      {/* Glow principal */}
+      <div className="absolute -top-32 right-0 h-[500px] w-[500px] rounded-full bg-blue-600/20 blur-[140px]" />
+
+      {/* Glow secundário */}
+      <div className="absolute bottom-0 left-0 h-[350px] rounded-full bg-cyan-500/10 blur-[120px]" />
+
+
+      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-24">
+
 
         {/* Texto */}
-        <div className="max-w-2xl">
+        <div>
 
-          <span className="inline-flex rounded-full border border-blue-500/40 bg-blue-500/10 px-4 py-2 text-sm text-blue-300">
-            Sistema inteligente de manutenção industrial
-          </span>
+          {/* Badge */}
+          <div className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-300">
+            Plataforma completa para Gestão Industrial
+          </div>
 
-          <h1 className="mt-8 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-            Transforme sua manutenção em
-            <span className="text-blue-500">
-              {" "}dados, controle e eficiência
+
+          {/* Título */}
+          <h1 className="mt-6 text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
+            Controle sua manutenção
+            <span className="block text-blue-500">
+              industrial com eficiência.
             </span>
           </h1>
 
-          <p className="mt-6 text-base leading-relaxed text-slate-300 sm:text-lg">
-            A Claumann Sistemas Integrados conecta ordens de serviço,
-            equipamentos, solicitações, indicadores e relatórios em uma
-            única plataforma desenvolvida para ambientes industriais.
+
+          {/* Texto */}
+          <p className="mt-6 max-w-xl text-base leading-7 text-slate-300 lg:text-lg">
+            Centralize manutenção, ativos, documentação técnica, estoque,
+            evidências fotográficas, indicadores e relatórios em uma única
+            plataforma desenvolvida para aumentar a produtividade,
+            disponibilidade e confiabilidade da sua operação.
           </p>
+
 
           {/* Botões */}
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
 
             <a
-              href="#dashboard"
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-semibold transition hover:bg-blue-500 sm:w-auto"
+              href="#contato"
+              className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg shadow-blue-600/30 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-500"
             >
-              Conhecer plataforma
+              Solicitar Demonstração
               <ArrowRight size={20} />
             </a>
 
+
             <a
               href="#funcionalidades"
-              className="w-full rounded-xl border border-slate-700 px-7 py-4 text-center font-semibold transition hover:bg-slate-800 sm:w-auto"
+              className="rounded-xl border border-slate-700 px-8 py-4 text-center font-semibold transition hover:border-blue-500 hover:bg-slate-900"
             >
-              Ver funcionalidades
+              Conhecer Recursos
             </a>
 
           </div>
+
 
           {/* Benefícios */}
           <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
 
             <div className="flex items-center gap-3">
-              <CheckCircle className="text-blue-500 flex-shrink-0" />
-              <span>Controle completo da manutenção</span>
+              <CheckCircle className="flex-shrink-0 text-blue-500" />
+              <span className="text-slate-300">
+                Gestão completa de ativos
+              </span>
             </div>
 
-            <div className="flex items-center gap-3">
-              <CheckCircle className="text-blue-500 flex-shrink-0" />
-              <span>Indicadores MTBF e MTTR</span>
-            </div>
 
             <div className="flex items-center gap-3">
-              <CheckCircle className="text-blue-500 flex-shrink-0" />
-              <span>Gestão de equipamentos</span>
+              <CheckCircle className="flex-shrink-0 text-blue-500" />
+              <span className="text-slate-300">
+                Documentação técnica integrada
+              </span>
             </div>
 
+
             <div className="flex items-center gap-3">
-              <CheckCircle className="text-blue-500 flex-shrink-0" />
-              <span>Relatórios inteligentes</span>
+              <CheckCircle className="flex-shrink-0 text-blue-500" />
+              <span className="text-slate-300">
+                Evidências e histórico visual
+              </span>
+            </div>
+
+
+            <div className="flex items-center gap-3">
+              <CheckCircle className="flex-shrink-0 text-blue-500" />
+              <span className="text-slate-300">
+                Indicadores em tempo real
+              </span>
             </div>
 
           </div>
 
         </div>
 
-        {/* Dashboard */}
-        <div className="relative mt-12 flex justify-center lg:mt-0">
 
-          <div className="absolute inset-0 rounded-3xl bg-blue-600/20 blur-3xl" />
 
-          <img
-            src={dashboard}
-            alt="Dashboard Claumann Sistemas Integrados"
-            className="relative w-full max-w-md rounded-2xl border border-slate-800 shadow-2xl lg:max-w-xl"
-          />
+        {/* Área visual - Vídeo */}
+        <div className="relative flex justify-center">
+
+
+          {/* Glow */}
+          <div className="absolute inset-0 rounded-[40px] bg-blue-600/20 blur-3xl" />
+
+
+          {/* Vídeo */}
+          <div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-2xl transition duration-500 hover:-translate-y-2">
+
+            <video
+              src={videoDemo}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full max-w-2xl"
+            />
+
+          </div>
+
+
+
+          {/* Card superior */}
+          <div className="absolute -top-5 -right-5 z-10 rounded-2xl border border-slate-700 bg-slate-900/90 px-5 py-3 shadow-xl backdrop-blur">
+
+            <p className="text-xs text-slate-400">
+              Plataforma
+            </p>
+
+            <p className="text-lg font-bold text-blue-400">
+              Online
+            </p>
+
+          </div>
+
+
+
+          {/* Card inferior */}
+          <div className="absolute -bottom-5 -left-5 z-10 rounded-2xl border border-slate-700 bg-slate-900/90 px-5 py-3 shadow-xl backdrop-blur">
+
+            <p className="text-xs text-slate-400">
+              Gestão Industrial
+            </p>
+
+            <p className="text-lg font-bold text-green-400">
+              Inteligente
+            </p>
+
+          </div>
+
 
         </div>
 
+
       </div>
+
     </section>
   );
 }
