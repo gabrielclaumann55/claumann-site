@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CheckCircle, Play, MessageCircle } from "lucide-react";
 import videoDemo from "../../assets/videos/apresentacao.mp4";
-import dashboard from "../../assets/images/dashboard.png";
+import dashboard from "../../assets/images/dashboard.webp";
 
 function Hero() {
   const [openVideo, setOpenVideo] = useState(false);
