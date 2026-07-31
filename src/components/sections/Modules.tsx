@@ -4,7 +4,13 @@ import {
   AlertTriangle,
   CalendarCheck,
   BarChart3,
-  FileText
+  FileText,
+  Camera,
+  Package,
+  Factory,
+  Search,
+  Lightbulb,
+  ShieldCheck
 } from "lucide-react";
 
 
@@ -15,45 +21,86 @@ const modules = [
     icon: ClipboardList,
     title: "Ordens de Serviço",
     description:
-    "Controle completo das atividades de manutenção, desde a abertura até o encerramento."
+      "Gerencie todo o ciclo da manutenção, desde a abertura, execução, apontamentos técnicos, evidências e encerramento das atividades."
   },
 
   {
     icon: Settings,
     title: "Gestão de Equipamentos",
     description:
-    "Organize seus ativos através de uma estrutura técnica e histórico de intervenções."
+      "Organize seus ativos em uma estrutura técnica completa com árvore de equipamentos, histórico e informações dos componentes."
   },
 
   {
     icon: AlertTriangle,
     title: "Solicitações",
     description:
-    "Gerencie demandas com níveis de prioridade e acompanhamento das ações."
+      "Centralize demandas da operação com níveis de criticidade, prioridade, acompanhamento e transformação em ordens de serviço."
   },
 
   {
     icon: CalendarCheck,
     title: "Planejamento Preventivo",
     description:
-    "Programe atividades e aumente a confiabilidade dos equipamentos."
+      "Programe manutenções preventivas, acompanhe planos de manutenção e aumente a disponibilidade dos equipamentos."
   },
 
   {
     icon: BarChart3,
-    title: "Indicadores",
+    title: "Indicadores de Manutenção",
     description:
-    "Acompanhe MTBF, MTTR e dados importantes da operação."
+      "Acompanhe MTBF, MTTR, disponibilidade, desempenho da equipe e indicadores essenciais para tomada de decisão."
   },
 
   {
     icon: FileText,
-    title: "Relatórios",
+    title: "Relatórios Gerenciais",
     description:
-    "Transforme informações da manutenção em decisões estratégicas."
+      "Transforme dados da manutenção em relatórios estratégicos para análise de desempenho e melhoria contínua."
+  },
+
+  {
+    icon: Camera,
+    title: "Evidências Fotográficas",
+    description:
+      "Registre antes e depois das intervenções, garantindo rastreabilidade e comprovação dos serviços realizados."
+  },
+
+  {
+    icon: Package,
+    title: "Controle de Estoque",
+    description:
+      "Gerencie peças, solicitações de materiais, consumo e disponibilidade dos itens utilizados na manutenção."
+  },
+
+  {
+    icon: Factory,
+    title: "Controle de Produção e OEE",
+    description:
+      "Monitore paradas, perdas produtivas e indicadores de eficiência para melhorar o desempenho operacional."
+  },
+
+  {
+    icon: Search,
+    title: "Análise de Falhas (RCA)",
+    description:
+      "Investigue causas raízes dos problemas e implemente ações para evitar reincidências."
+  },
+
+  {
+    icon: Lightbulb,
+    title: "Melhoria Contínua (Kaizen)",
+    description:
+      "Registre ideias de melhoria, acompanhe ações e incentive a evolução dos processos."
+  },
+
+  {
+    icon: ShieldCheck,
+    title: "Gestão e Auditoria",
+    description:
+      "Controle usuários, permissões, histórico de alterações e informações importantes para auditorias."
   }
 ];
-
 
 return (
 

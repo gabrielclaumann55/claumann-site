@@ -1,10 +1,22 @@
 import { useState } from "react";
-import { ArrowRight, CheckCircle, Play } from "lucide-react";
+import { ArrowRight, CheckCircle, Play, MessageCircle } from "lucide-react";
 import videoDemo from "../../assets/videos/apresentacao.mp4";
 import dashboard from "../../assets/images/dashboard.png";
 
 function Hero() {
   const [openVideo, setOpenVideo] = useState(false);
+  const whatsappNumber = "5541997328757";
+
+const handleWhatsApp = () => {
+  const message = encodeURIComponent(
+    "Olá, gostaria de conhecer a Claumann Sistemas Integrados e solicitar uma demonstração da plataforma de manutenção industrial."
+  );
+
+  window.open(
+    `https://wa.me/${whatsappNumber}?text=${message}`,
+    "_blank"
+  );
+};
 
   return (
     <section className="relative overflow-hidden bg-slate-950 pt-24 text-white">
@@ -49,13 +61,30 @@ function Hero() {
           {/* Botões */}
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
 
-            <a
-              href="#contato"
-              className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg shadow-blue-600/30 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-500"
-            >
-              Solicitar Demonstração
-              <ArrowRight size={20} />
-            </a>
+           <button
+  onClick={handleWhatsApp}
+  className="
+    flex 
+    items-center 
+    justify-center 
+    gap-2 
+    rounded-xl 
+    bg-blue-600 
+    px-8 
+    py-4 
+    font-semibold 
+    text-white 
+    shadow-lg 
+    shadow-blue-600/30 
+    transition-all 
+    duration-300 
+    hover:-translate-y-1 
+    hover:bg-blue-500
+  "
+>
+  Solicitar Demonstração
+  <MessageCircle size={20} />
+</button>
 
 
             <a
