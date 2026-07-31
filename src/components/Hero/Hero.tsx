@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, CheckCircle, Play, MessageCircle } from "lucide-react";
+import { CheckCircle, Play, MessageCircle } from "lucide-react";
 import videoDemo from "../../assets/videos/apresentacao.mp4";
 import dashboard from "../../assets/images/dashboard.png";
 
