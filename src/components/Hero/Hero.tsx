@@ -1,7 +1,11 @@
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, CheckCircle, Play } from "lucide-react";
 import videoDemo from "../../assets/videos/apresentacao.mp4";
+import dashboard from "../../assets/images/dashboard.png";
 
 function Hero() {
+  const [openVideo, setOpenVideo] = useState(false);
+
   return (
     <section className="relative overflow-hidden bg-slate-950 pt-24 text-white">
 
@@ -112,24 +116,49 @@ function Hero() {
           <div className="absolute inset-0 rounded-[40px] bg-blue-600/20 blur-3xl" />
 
 
-          {/* Vídeo */}
-          <div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-2xl transition duration-500 hover:-translate-y-2">
+  {/* Desktop */}
+<div className="relative hidden overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-2xl transition duration-500 hover:-translate-y-2 lg:block">
 
-            <video
-              src={videoDemo}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full max-w-2xl"
-            />
+  <video
+    src={videoDemo}
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="metadata"
+    className="w-full max-w-2xl"
+  />
 
-          </div>
+</div>
+
+{/* Mobile */}
+<div className="relative lg:hidden">
+
+  <div className="overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-2xl">
+    <img
+      src={dashboard}
+      alt="Dashboard Claumann Sistemas Integrados"
+      className="w-full"
+    />
+  </div>
+
+  <div className="mt-6">
+    <button
+      type="button"
+      onClick={() => setOpenVideo(true)}
+      className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-4 font-semibold text-white shadow-lg shadow-blue-600/30 transition-all duration-300 hover:bg-blue-500"
+    >
+      <Play size={18} />
+      Assistir demonstração
+    </button>
+  </div>
+
+</div>
 
 
 
           {/* Card superior */}
-          <div className="absolute -top-5 -right-5 z-10 rounded-2xl border border-slate-700 bg-slate-900/90 px-5 py-3 shadow-xl backdrop-blur">
+          <div className="absolute -top-5 -right-5 z-10 hidden rounded-2xl border border-slate-700 bg-slate-900/90 px-5 py-3 shadow-xl backdrop-blur lg:block">
 
             <p className="text-xs text-slate-400">
               Plataforma
@@ -144,17 +173,15 @@ function Hero() {
 
 
           {/* Card inferior */}
-          <div className="absolute -bottom-5 -left-5 z-10 rounded-2xl border border-slate-700 bg-slate-900/90 px-5 py-3 shadow-xl backdrop-blur">
+        <div className="pointer-events-none absolute -bottom-5 -left-5 z-10 hidden rounded-2xl border border-slate-700 bg-slate-900/90 px-5 py-3 shadow-xl backdrop-blur lg:block">
+  <p className="text-xs text-slate-400">
+    Gestão Industrial
+  </p>
 
-            <p className="text-xs text-slate-400">
-              Gestão Industrial
-            </p>
-
-            <p className="text-lg font-bold text-green-400">
-              Inteligente
-            </p>
-
-          </div>
+  <p className="text-lg font-bold text-green-400">
+    Inteligente
+  </p>
+</div>
 
 
         </div>
@@ -162,7 +189,34 @@ function Hero() {
 
       </div>
 
-    </section>
+    {openVideo && (
+  <div
+    className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+    onClick={() => setOpenVideo(false)}
+  >
+    <div
+      className="relative w-full max-w-5xl"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        onClick={() => setOpenVideo(false)}
+        className="absolute -top-12 right-0 text-4xl text-white transition hover:text-blue-400"
+      >
+        ✕
+      </button>
+
+      <div className="overflow-hidden rounded-3xl border border-slate-700 bg-slate-900 shadow-2xl">
+        <video
+          src={videoDemo}
+          controls
+          autoPlay
+          className="w-full"
+        />
+      </div>
+    </div>
+  </div>
+)}
+</section>
   );
 }
 
