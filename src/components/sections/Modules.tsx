@@ -1,229 +1,140 @@
 import {
   ClipboardList,
   Settings,
-  AlertTriangle,
   CalendarCheck,
-  BarChart3,
-  FileText,
-  Camera,
   Package,
-  Factory,
-  Search,
-  Lightbulb,
+  BarChart3,
   ShieldCheck
 } from "lucide-react";
 
-
 function Modules() {
+  const modules = [
+    {
+      icon: ClipboardList,
+      title: "Manutenção",
+      description:
+        "Ordens de serviço, solicitações, evidências e histórico completo das intervenções."
+    },
+    {
+      icon: Settings,
+      title: "Equipamentos",
+      description:
+        "Árvore técnica de ativos, componentes, documentação e histórico centralizado."
+    },
+    {
+      icon: CalendarCheck,
+      title: "Planejamento",
+      description:
+        "Programação preventiva, recorrências, prioridades e organização das atividades."
+    },
+    {
+      icon: Package,
+      title: "Estoque",
+      description:
+        "Controle de peças, consumo, solicitações e vínculo com equipamentos e componentes."
+    },
+    {
+      icon: BarChart3,
+      title: "Indicadores",
+      description:
+        "MTBF, MTTR, disponibilidade, relatórios e informações para tomada de decisão."
+    },
+    {
+      icon: ShieldCheck,
+      title: "Gestão e Rastreabilidade",
+      description:
+        "Usuários, permissões, auditoria, histórico de alterações, RCA e melhoria contínua."
+    }
+  ];
 
-const modules = [
-  {
-    icon: ClipboardList,
-    title: "Ordens de Serviço",
-    description:
-      "Gerencie todo o ciclo da manutenção, desde a abertura, execução, apontamentos técnicos, evidências e encerramento das atividades."
-  },
+  return (
+    <section
+      id="funcionalidades"
+      className="bg-slate-50 py-24"
+    >
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-  {
-    icon: Settings,
-    title: "Gestão de Equipamentos",
-    description:
-      "Organize seus ativos em uma estrutura técnica completa com árvore de equipamentos, histórico e informações dos componentes."
-  },
+        {/* Cabeçalho */}
+        <div className="mx-auto max-w-3xl text-center">
 
-  {
-    icon: AlertTriangle,
-    title: "Solicitações",
-    description:
-      "Centralize demandas da operação com níveis de criticidade, prioridade, acompanhamento e transformação em ordens de serviço."
-  },
+          <div className="inline-flex items-center rounded-full border border-blue-200 bg-white px-4 py-2 text-sm font-semibold text-blue-600">
+            Recursos da solução
+          </div>
 
-  {
-    icon: CalendarCheck,
-    title: "Planejamento Preventivo",
-    description:
-      "Programe manutenções preventivas, acompanhe planos de manutenção e aumente a disponibilidade dos equipamentos."
-  },
+          <h2 className="mt-5 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+            Tudo conectado em um único ambiente
+          </h2>
 
-  {
-    icon: BarChart3,
-    title: "Indicadores de Manutenção",
-    description:
-      "Acompanhe MTBF, MTTR, disponibilidade, desempenho da equipe e indicadores essenciais para tomada de decisão."
-  },
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+            Estruture os principais processos da manutenção e tenha mais
+            controle sobre ativos, planejamento, materiais e indicadores.
+          </p>
 
-  {
-    icon: FileText,
-    title: "Relatórios Gerenciais",
-    description:
-      "Transforme dados da manutenção em relatórios estratégicos para análise de desempenho e melhoria contínua."
-  },
+        </div>
 
-  {
-    icon: Camera,
-    title: "Evidências Fotográficas",
-    description:
-      "Registre antes e depois das intervenções, garantindo rastreabilidade e comprovação dos serviços realizados."
-  },
+        {/* Módulos */}
+        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
 
-  {
-    icon: Package,
-    title: "Controle de Estoque",
-    description:
-      "Gerencie peças, solicitações de materiais, consumo e disponibilidade dos itens utilizados na manutenção."
-  },
+          {modules.map((module) => {
+            const Icon = module.icon;
 
-  {
-    icon: Factory,
-    title: "Controle de Produção e OEE",
-    description:
-      "Monitore paradas, perdas produtivas e indicadores de eficiência para melhorar o desempenho operacional."
-  },
+            return (
+              <div
+                key={module.title}
+                className="
+                  group
+                  rounded-2xl
+                  border
+                  border-slate-200
+                  bg-white
+                  p-7
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:border-blue-300
+                  hover:shadow-xl
+                  hover:shadow-slate-200/60
+                "
+              >
 
-  {
-    icon: Search,
-    title: "Análise de Falhas (RCA)",
-    description:
-      "Investigue causas raízes dos problemas e implemente ações para evitar reincidências."
-  },
+                <div
+                  className="
+                    flex
+                    h-12
+                    w-12
+                    items-center
+                    justify-center
+                    rounded-xl
+                    border
+                    border-blue-100
+                    bg-blue-50
+                    text-blue-600
+                    transition-colors
+                    duration-300
+                    group-hover:bg-blue-600
+                    group-hover:text-white
+                  "
+                >
+                  <Icon size={22} strokeWidth={2} />
+                </div>
 
-  {
-    icon: Lightbulb,
-    title: "Melhoria Contínua (Kaizen)",
-    description:
-      "Registre ideias de melhoria, acompanhe ações e incentive a evolução dos processos."
-  },
+                <h3 className="mt-6 text-lg font-semibold text-slate-950">
+                  {module.title}
+                </h3>
 
-  {
-    icon: ShieldCheck,
-    title: "Gestão e Auditoria",
-    description:
-      "Controle usuários, permissões, histórico de alterações e informações importantes para auditorias."
-  }
-];
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  {module.description}
+                </p>
 
-return (
+              </div>
+            );
+          })}
 
-<section
-  id="funcionalidades"
-  className="bg-white py-24"
->
+        </div>
 
-<div className="mx-auto max-w-7xl px-8">
-
-<div className="max-w-3xl">
-
-<span className="
-text-blue-600
-font-semibold
-">
-Recursos da plataforma
-</span>
-
-<h2 className="
-mt-4
-text-4xl
-font-bold
-text-slate-900
-">
-Tudo que sua manutenção precisa em um único sistema
-</h2>
-
-<p className="
-mt-4
-text-lg
-text-slate-600
-">
-Centralize processos, equipamentos e indicadores para uma gestão
-mais eficiente da manutenção industrial.
-</p>
-
-</div>
-
-
-<div className="
-mt-12
-grid
-gap-6
-md:grid-cols-2
-lg:grid-cols-3
-">
-
-
-{modules.map((module,index)=>{
-
-const Icon = module.icon;
-
-return (
-
-<div
-key={index}
-className="
-rounded-2xl
-border
-border-slate-200
-p-8
-hover:shadow-xl
-transition
-"
->
-
-<div className="
-mb-5
-flex
-h-12
-w-12
-items-center
-justify-center
-rounded-xl
-bg-blue-100
-text-blue-600
-">
-
-<Icon size={26}/>
-
-</div>
-
-
-<h3 className="
-text-xl
-font-semibold
-text-slate-900
-">
-
-{module.title}
-
-</h3>
-
-
-<p className="
-mt-3
-text-slate-600
-leading-relaxed
-">
-
-{module.description}
-
-</p>
-
-
-</div>
-
-)
-
-})}
-
-
-</div>
-
-
-</div>
-
-</section>
-
-)
-
+      </div>
+    </section>
+  );
 }
-
 
 export default Modules;

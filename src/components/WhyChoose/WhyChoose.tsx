@@ -1,108 +1,138 @@
-import { CheckCircle } from "lucide-react";
+import {
+  Server,
+  ShieldCheck,
+  Workflow,
+  Factory,
+  History,
+  PlugZap
+} from "lucide-react";
 
 function WhyChoose() {
-
   const advantages = [
     {
-      title: "Especializado em manutenção industrial",
+      icon: Factory,
+      title: "Desenvolvido para a indústria",
       description:
-        "Uma plataforma criada considerando a rotina real de fábricas, equipes de manutenção e processos industriais."
+        "Uma solução pensada para a rotina de manutenção, PCM e operação industrial."
     },
-
     {
-      title: "Controle completo dos ativos",
+      icon: Server,
+      title: "Implantação flexível",
       description:
-        "Gerencie equipamentos, componentes, histórico de intervenções e informações técnicas em uma única estrutura."
+        "Utilize a Claumann em ambiente On-Premise, Cloud ou Híbrido, conforme a infraestrutura da empresa."
     },
-
     {
-      title: "Redução de paradas e falhas",
+      icon: ShieldCheck,
+      title: "Controle e segurança",
       description:
-        "Utilize indicadores e históricos para identificar problemas, melhorar preventivas e aumentar a disponibilidade."
+        "Gerencie usuários, permissões e acessos mantendo as informações sob controle da organização."
     },
-
     {
-      title: "Rastreabilidade para auditorias",
+      icon: History,
+      title: "Rastreabilidade",
       description:
-        "Tenha registros completos de serviços realizados, evidências, responsáveis e alterações do sistema."
+        "Mantenha histórico de intervenções, responsáveis, evidências e alterações relevantes para gestão e auditorias."
     },
-
     {
-      title: "Decisões baseadas em dados",
+      icon: Workflow,
+      title: "Processos centralizados",
       description:
-        "Transforme informações da manutenção em indicadores estratégicos como MTBF, MTTR, disponibilidade e desempenho."
+        "Conecte manutenção, ativos, planejamento, estoque e indicadores em um único ambiente."
     },
-
     {
-      title: "Acesso seguro em nuvem",
+      icon: PlugZap,
+      title: "Preparado para integração",
       description:
-        "Tenha sua manutenção conectada de qualquer lugar com usuários, permissões e informações sempre disponíveis."
+        "Arquitetura preparada para integração com sistemas corporativos e outras soluções utilizadas pela indústria."
     }
   ];
 
-
   return (
-    <section className="bg-slate-100 py-24">
+    <section className="bg-white py-24">
 
-      <div className="mx-auto max-w-7xl px-8">
+      <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
 
-        <div className="text-center max-w-3xl mx-auto">
+        {/* Texto principal */}
+        <div className="max-w-lg">
 
-          <span className="font-semibold text-blue-600">
-            Por que escolher a Claumann?
-          </span>
+          <div className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-600">
+            Diferenciais
+          </div>
 
-          <h2 className="mt-4 text-4xl font-bold text-slate-900">
-            Tecnologia aplicada à realidade industrial
+          <h2 className="mt-5 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+            Tecnologia alinhada à realidade da sua operação
           </h2>
 
-          <p className="mt-6 text-lg text-slate-600">
-            Uma plataforma desenvolvida para transformar a manutenção
-            em um processo mais organizado, previsível e eficiente.
+          <p className="mt-6 text-lg leading-8 text-slate-600">
+            Mais do que digitalizar processos, a Claumann foi estruturada
+            para oferecer controle, segurança, rastreabilidade e flexibilidade
+            de implantação em ambientes industriais.
           </p>
+
+          <div className="mt-8 rounded-2xl border border-blue-100 bg-blue-50/70 p-6">
+
+            <p className="text-sm font-semibold text-blue-700">
+              Implantação adaptável
+            </p>
+
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              A solução pode ser implantada de acordo com a infraestrutura,
+              políticas internas e requisitos de segurança de cada empresa.
+            </p>
+
+          </div>
 
         </div>
 
+        {/* Diferenciais */}
+        <div className="grid gap-x-10 gap-y-10 md:grid-cols-2">
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {advantages.map((item) => {
+            const Icon = item.icon;
 
-          {advantages.map((item,index)=>(
-            
-            <div
-              key={index}
-              className="
-              rounded-xl 
-              border 
-              border-slate-200 
-              bg-white 
-              p-6 
-              shadow-sm
-              hover:shadow-lg
-              transition
-              "
-            >
+            return (
+              <div
+                key={item.title}
+                className="group flex gap-4"
+              >
 
-              <div className="flex items-center gap-3">
+                <div
+                  className="
+                    flex
+                    h-12
+                    w-12
+                    flex-shrink-0
+                    items-center
+                    justify-center
+                    rounded-xl
+                    border
+                    border-blue-100
+                    bg-blue-50
+                    text-blue-600
+                    transition-all
+                    duration-300
+                    group-hover:bg-blue-600
+                    group-hover:text-white
+                  "
+                >
+                  <Icon size={22} strokeWidth={2} />
+                </div>
 
-                <CheckCircle 
-                  className="text-blue-600"
-                  size={24}
-                />
+                <div>
 
-                <h3 className="text-xl font-bold text-slate-900">
-                  {item.title}
-                </h3>
+                  <h3 className="text-base font-semibold text-slate-950">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    {item.description}
+                  </p>
+
+                </div>
 
               </div>
-
-
-              <p className="mt-4 text-slate-600 leading-relaxed">
-                {item.description}
-              </p>
-
-            </div>
-
-          ))}
+            );
+          })}
 
         </div>
 

@@ -1,82 +1,122 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "../../assets/logo.webp";
+import logo from "../../assets/logo.png";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const platformUrl = "http://claumann.base44.app/";
+  const whatsappNumber = "5541997328757";
+
+  const handleWhatsApp = () => {
+    const message = encodeURIComponent(
+      "Olá, gostaria de conhecer a Claumann Sistemas Integrados e solicitar uma demonstração."
+    );
+
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${message}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur-xl">
+      <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-6 lg:px-8">
 
-        {/* Logo */}
+        {/* Marca */}
         <a
           href="#"
-          className="flex items-center transition-transform duration-300 hover:scale-[1.02]"
+          className="flex items-center gap-3"
+          aria-label="Claumann Sistemas Integrados"
         >
           <img
             src={logo}
             alt="Claumann Sistemas Integrados"
-            className="
-              h-16
-              w-auto
-              object-contain
-              sm:h-20
-              lg:h-24
-              xl:h-28
-            "
+            className="h-12 w-12 object-contain"
           />
+
+          <div className="hidden sm:block">
+            <div className="text-sm font-bold tracking-wide text-slate-900">
+              CLAUMANN
+            </div>
+
+            <div className="text-[9px] font-medium uppercase tracking-[0.22em] text-blue-600">
+              Sistemas Integrados
+            </div>
+          </div>
         </a>
 
-        {/* Botão Desktop */}
-        <div className="hidden lg:block">
-          <a
-            href={platformUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              rounded-xl
-              bg-blue-600
-              px-7
-              py-3
-              font-semibold
-              text-white
-              shadow-lg
-              shadow-blue-600/30
-              transition-all
-              duration-300
-              hover:-translate-y-1
-              hover:bg-blue-500
-              hover:shadow-blue-500/40
-            "
-          >
-            Acessar Plataforma
-          </a>
-        </div>
+        {/* Desktop */}
+        <nav className="hidden items-center gap-9 lg:flex">
 
-        {/* Menu Mobile */}
+          <a
+            href="#funcionalidades"
+            className="text-sm font-medium text-slate-600 transition-colors hover:text-blue-600"
+          >
+            Recursos
+          </a>
+
+          <a
+            href="#planos"
+            className="text-sm font-medium text-slate-600 transition-colors hover:text-blue-600"
+          >
+            Planos
+          </a>
+
+          <a
+            href="#contato"
+            className="text-sm font-medium text-slate-600 transition-colors hover:text-blue-600"
+          >
+            Contato
+          </a>
+
+        </nav>
+
+        {/* CTA Desktop */}
         <button
-          className="text-white lg:hidden"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Abrir menu"
+          type="button"
+          onClick={handleWhatsApp}
+          className="
+            hidden
+            rounded-xl
+            bg-blue-600
+            px-6
+            py-3
+            text-sm
+            font-semibold
+            text-white
+            shadow-sm
+            transition-all
+            duration-300
+            hover:bg-blue-700
+            lg:block
+          "
         >
-          {menuOpen ? <X size={30} /> : <Menu size={30} />}
+          Solicitar demonstração
+        </button>
+
+        {/* Mobile */}
+        <button
+          type="button"
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="text-slate-900 lg:hidden"
+          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+        >
+          {menuOpen ? <X size={27} /> : <Menu size={27} />}
         </button>
 
       </div>
 
       {/* Menu Mobile */}
       {menuOpen && (
-        <div className="border-t border-slate-800 bg-slate-900/95 px-6 py-6 backdrop-blur-xl lg:hidden">
+        <div className="border-t border-slate-200 bg-white px-6 py-6 lg:hidden">
 
           <nav className="flex flex-col gap-5">
 
             <a
               href="#"
               onClick={() => setMenuOpen(false)}
-              className="text-lg text-white"
+              className="font-medium text-slate-700"
             >
               Início
             </a>
@@ -84,48 +124,37 @@ function Header() {
             <a
               href="#funcionalidades"
               onClick={() => setMenuOpen(false)}
-              className="text-lg text-white"
+              className="font-medium text-slate-700"
             >
-              Funcionalidades
+              Recursos
             </a>
 
             <a
-              href="#dashboard"
+              href="#planos"
               onClick={() => setMenuOpen(false)}
-              className="text-lg text-white"
+              className="font-medium text-slate-700"
             >
-              Dashboard
+              Planos
             </a>
 
             <a
               href="#contato"
               onClick={() => setMenuOpen(false)}
-              className="text-lg text-white"
+              className="font-medium text-slate-700"
             >
               Contato
             </a>
 
-            <a
-              href={platformUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                rounded-xl
-                bg-blue-600
-                px-7
-                py-3
-                text-center
-                font-semibold
-                text-white
-                shadow-lg
-                shadow-blue-600/30
-                transition-all
-                duration-300
-                hover:bg-blue-500
-              "
+            <button
+              type="button"
+              onClick={() => {
+                setMenuOpen(false);
+                handleWhatsApp();
+              }}
+              className="rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white"
             >
-              Acessar Plataforma
-            </a>
+              Solicitar demonstração
+            </button>
 
           </nav>
 

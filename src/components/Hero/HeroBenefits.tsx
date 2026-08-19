@@ -1,24 +1,28 @@
-import { CheckCircle } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 const benefits = [
-  "Gestão completa de ativos",
-  "Documentação técnica integrada",
-  "Evidências e histórico visual",
-  "Indicadores em tempo real"
+  "On-Premise, Cloud ou Híbrido",
+  "Controle de usuários e acessos",
+  "Rastreabilidade das operações",
+  "Gestão industrial integrada"
 ];
 
 function HeroBenefits() {
   return (
-    <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-4">
 
       {benefits.map((benefit) => (
         <div
           key={benefit}
           className="flex items-center gap-3"
         >
-          <CheckCircle className="flex-shrink-0 text-blue-500" />
 
-          <span className="text-slate-300">
+          <CheckCircle2
+            size={19}
+            className="flex-shrink-0 text-blue-600"
+          />
+
+          <span className="text-sm font-medium text-slate-600">
             {benefit}
           </span>
 

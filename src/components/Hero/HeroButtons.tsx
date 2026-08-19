@@ -1,94 +1,90 @@
-import { MessageCircle, Play } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 
-type HeroButtonsProps = {
-  mobile?: boolean;
-};
-
-function HeroButtons({ mobile = false }: HeroButtonsProps) {
+function HeroButtons() {
   const whatsappNumber = "5541997328757";
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent(
-      "Olá, gostaria de conhecer a Claumann Sistemas Integrados e solicitar uma demonstração da plataforma de manutenção industrial."
+      "Olá, gostaria de conhecer a Claumann Sistemas Integrados e solicitar uma demonstração da solução de gestão industrial."
     );
 
     window.open(
       `https://wa.me/${whatsappNumber}?text=${message}`,
-      "_blank"
+      "_blank",
+      "noopener,noreferrer"
     );
   };
 
   return (
     <div className="mt-8 flex flex-col gap-4 sm:flex-row">
 
+      {/* CTA principal */}
       <button
+        type="button"
         onClick={handleWhatsApp}
         className="
+          group
+          flex
+          items-center
+          justify-center
+          gap-3
+          rounded-xl
+          bg-blue-600
+          px-7
+          py-4
+          text-sm
+          font-semibold
+          text-white
+          shadow-lg
+          shadow-blue-600/20
+          transition-all
+          duration-300
+          hover:-translate-y-0.5
+          hover:bg-blue-700
+          hover:shadow-xl
+          hover:shadow-blue-600/25
+        "
+      >
+        Solicitar demonstração
+
+        <MessageCircle
+          size={19}
+          strokeWidth={2}
+        />
+      </button>
+
+      {/* CTA secundário */}
+      <a
+        href="#funcionalidades"
+        className="
+          group
           flex
           items-center
           justify-center
           gap-2
           rounded-xl
-          bg-blue-600
-          px-8
+          border
+          border-slate-300
+          bg-white
+          px-7
           py-4
+          text-sm
           font-semibold
-          text-white
-          shadow-lg
-          shadow-blue-600/30
+          text-slate-700
           transition-all
           duration-300
-          hover:-translate-y-1
-          hover:bg-blue-500
+          hover:border-blue-300
+          hover:bg-blue-50
+          hover:text-blue-700
         "
       >
-        Solicitar Demonstração
-        <MessageCircle size={20} />
-      </button>
+        Conhecer recursos
 
-      <a
-        href="#funcionalidades"
-        className="
-          rounded-xl
-          border
-          border-slate-700
-          px-8
-          py-4
-          text-center
-          font-semibold
-          transition
-          hover:border-blue-500
-          hover:bg-slate-900
-        "
-      >
-        Conhecer Recursos
+        <ArrowRight
+          size={17}
+          className="transition-transform duration-300 group-hover:translate-x-1"
+        />
       </a>
-
-      {mobile && (
-        <a
-          href="https://www.youtube.com/watch?v=hqiLCk8fer8"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
-            flex
-            items-center
-            justify-center
-            gap-2
-            rounded-xl
-            border
-            border-blue-500
-            px-8
-            py-4
-            font-semibold
-            text-blue-300
-            transition
-            hover:bg-blue-500/10
-          "
-        >
-          <Play size={18} />
-          Assistir demonstração
-        </a>
-      )}
 
     </div>
   );
